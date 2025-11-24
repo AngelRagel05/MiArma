@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>MiArma — Paisajes de Ciencia Ficción</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <meta name="description" content="Portfolio interactivo de MiArma — paisajes digitales de ciencia ficción." />
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="brand">
+            <img src="assets/images/logo.svg" alt="Logo MiArma" class="logo" />
+            <h1 class="sr-only">MiArma — Artista digital</h1>
+        </div>
+        <nav class="main-nav" aria-label="Navegación principal">
+            <a href="#work">Obra</a>
+            <a href="#about">Sobre MiArma</a>
+            <a href="#contact">Contacto</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero -->
+        <section class="hero" aria-label="Imagen principal">
+            <img src="assets/images/hero.jpg" alt="Paisaje futurista por MiArma" class="hero-img" />
+            <div class="hero-overlay">
+                <h2>MiArma</h2>
+                <p>Paisajes de ciencia ficción</p>
+                <button id="open-reel" class="btn">Ver Reel</button>
+                <a href="#contact" class="btn contact-btn">
+                    <img src="assets/images/contact-btn.gif" alt="" aria-hidden="true" />
+                    Contacto
+                </a>
+            </div>
+        </section>
+
+        <!-- Work / Gallery -->
+        <section id="work" class="gallery-section">
+            <h3>Galería</h3>
+            <div class="viewer" aria-live="polite">
+                <img id="mainImage" src="assets/images/gallery1_full.jpg" alt="Obra principal" />
+            </div>
+            <ul class="thumbnails" role="list">
+                <li><button class="thumb" data-full="assets/images/gallery1_full.jpg" aria-label="Ver obra 1">
+                        <img src="assets/images/gallery1_thumb.jpg" alt="Miniatura obra 1" />
+                    </button></li>
+                <li><button class="thumb" data-full="assets/images/gallery2_full.jpg" aria-label="Ver obra 2">
+                        <img src="assets/images/gallery2_thumb.jpg" alt="Miniatura obra 2" />
+                    </button></li>
+                <li><button class="thumb" data-full="assets/images/gallery3_full.jpg" aria-label="Ver obra 3">
+                        <img src="assets/images/gallery3_thumb.jpg" alt="Miniatura obra 3" />
+                    </button></li>
+            </ul>
+        </section>
+
+        <!-- About / Audio -->
+        <section id="about" class="about">
+            <h3>Sobre MiArma</h3>
+            <p>Artista digital especializada en paisajes de ciencia ficción.</p>
+            <audio controls src="assets/audio/ambient.mp3" aria-label="Audio de presentación">Tu navegador no soporta
+                audio.</audio>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="contact">
+            <h3>Contacto</h3>
+            <p>Email: <a href="mailto:miarma@example.com">miarma@example.com</a></p>
+        </section>
+    </main>
+
+    <!-- Video Modal -->
+    <div id="videoModal" class="modal" aria-hidden="true" role="dialog" aria-label="Reel de MiArma">
+        <div class="modal-content" role="document">
+            <button id="closeModal" class="modal-close" aria-label="Cerrar">✕</button>
+            <video id="reelVideo" controls preload="metadata" width="800">
+                <source src="assets/video/reel.mp4" type="video/mp4">
+                Tu navegador no soporta video.
+            </video>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <nav>
+            <a href="credits.html">Créditos y Licencias</a>
+        </nav>
+        <div class="license">
+            <img src="https://mirrors.creativecommons.org/presskit/cc.primary.srr.gif" alt="CC icon"
+                style="height:20px;vertical-align:middle">
+            <span>Licencia: CC BY-NC 4.0 — MiArma (obra derivada)</span>
+        </div>
+    </footer>
+
+    <script src="js/main.js" defer></script>
+</body>
+
+</html>
