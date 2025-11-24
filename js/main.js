@@ -56,3 +56,15 @@ document.addEventListener("DOMContentLoaded", () => {
       closeModal();
   });
 });
+
+const mainIMG = document.getElementById("mainimg");
+const thumb = document.querySelectorAll(".imgThumb");
+
+thumb.forEach((btn) => {
+    btn.addEventListener("click", () => {
+        let mainSrc = mainIMG.src;
+        mainIMG.src = btn.src;
+        btn.src = mainSrc;
+    });
+});
+
