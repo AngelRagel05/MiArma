@@ -15,7 +15,8 @@
 
 html,
 body {
-    height: 100%;
+    min-height: 100%;
+    height: auto;
     margin: 0;
     font-family: Inter, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial;
 }
@@ -153,7 +154,8 @@ body {
     border-radius: 6px;
     cursor: pointer;
     transition: transform var(--ease), border-color var(--ease);
-    flex: 0 0 auto; /* evita que las miniaturas se compriman */
+    flex: 0 0 auto;
+    /* evita que las miniaturas se compriman */
 }
 
 .thumb img {
@@ -173,7 +175,7 @@ body {
 
 /* Focus visible accesible */
 .thumb:focus-visible {
-    outline: 3px solid rgba(142,167,255,0.28);
+    outline: 3px solid rgba(142, 167, 255, 0.28);
     outline-offset: 3px;
 }
 
@@ -190,7 +192,7 @@ body {
 /* Nuevo: vídeo inline debajo del audio */
 .inline-video {
     margin-top: 1rem;
-    background: rgba(255,255,255,0.02);
+    background: rgba(255, 255, 255, 0.02);
     padding: .75rem;
     border-radius: 10px;
     max-width: 920px;
@@ -216,7 +218,7 @@ body {
 
 /* A11y: foco visible en el vídeo */
 .inline-video video:focus {
-    outline: 3px solid rgba(142,167,255,0.6);
+    outline: 3px solid rgba(142, 167, 255, 0.6);
     outline-offset: 4px;
 }
 
@@ -269,16 +271,36 @@ body {
 
 /* Utility: pantalla pequeña */
 @media (max-width: 640px) {
-    .hero-overlay { left: 0.6rem; bottom: 0.6rem; padding: .75rem; }
-    .thumb img { width: 120px; height: 75px; }
-    .inline-video { padding: .5rem; }
-    .hero-img { max-height: 45vh; }
+    .hero-overlay {
+        left: 0.6rem;
+        bottom: 0.6rem;
+        padding: .75rem;
+    }
+
+    .thumb img {
+        width: 120px;
+        height: 75px;
+    }
+
+    .inline-video {
+        padding: .5rem;
+    }
+
+    .hero-img {
+        max-height: 45vh;
+    }
 }
 
 /* Utility: pantallas muy pequeñas, hace scroll horizontal más usable */
 @media (max-width: 420px) {
-    .thumbnails { gap: .4rem; }
-    .thumb img { width: 110px; height: 70px; }
+    .thumbnails {
+        gap: .4rem;
+    }
+
+    .thumb img {
+        width: 110px;
+        height: 70px;
+    }
 }
 
 /* Screen-reader helper */
