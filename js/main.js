@@ -68,3 +68,13 @@ thumb.forEach((btn) => {
   });
 });
 
+const contactBtn = document.getElementById('contactBtn');
+if (contactBtn) {
+  contactBtn.addEventListener('click', () => {
+    const email = 'ismaelvargasduque14@alumnos.ilerna.com';
+    const subject = encodeURIComponent('Contacto desde MiArma');
+    const body = encodeURIComponent('Hola MiArma,%0D%0A%0D%0AMe interesa tu trabajo y quisiera...');
+    window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
+  });
+}
+
