@@ -10,20 +10,20 @@
 }
 
 * {
-    box-sizing: border-box
+    box-sizing: border-box;
 }
 
 html,
 body {
     height: 100%;
     margin: 0;
-    font-family: Inter, -apple-system, system-ui, Segoe UI, Roboto, "Helvetica Neue", Arial;
+    font-family: Inter, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial;
 }
 
 body {
     background: var(--bg);
     color: #e6eef8;
-    line-height: 1.4
+    line-height: 1.4;
 }
 
 .site-header {
@@ -32,17 +32,17 @@ body {
     align-items: center;
     padding: 1rem;
     max-width: var(--max-width);
-    margin: 0 auto
+    margin: 0 auto;
 }
 
 .brand {
     display: flex;
     gap: .75rem;
-    align-items: center
+    align-items: center;
 }
 
 .logo {
-    height: 44px
+    height: 44px;
 }
 
 .main-nav a {
@@ -50,13 +50,13 @@ body {
     text-decoration: none;
     margin-left: 1rem;
     opacity: .85;
-    transition: opacity var(--ease)
+    transition: opacity var(--ease);
 }
 
 .main-nav a:hover,
 .main-nav a:focus {
     opacity: 1;
-    text-decoration: none
+    text-decoration: none;
 }
 
 .hero {
@@ -64,7 +64,7 @@ body {
     max-width: var(--max-width);
     margin: 1rem auto;
     border-radius: var(--radius);
-    overflow: hidden
+    overflow: hidden;
 }
 
 .hero-img {
@@ -72,7 +72,7 @@ body {
     width: 100%;
     height: auto;
     max-height: 60vh;
-    object-fit: cover
+    object-fit: cover;
 }
 
 .hero-overlay {
@@ -83,7 +83,7 @@ body {
     backdrop-filter: blur(6px);
     background: linear-gradient(90deg, rgba(0, 0, 0, .35), rgba(0, 0, 0, .15));
     padding: 1rem;
-    border-radius: 8px
+    border-radius: 8px;
 }
 
 .btn {
@@ -96,24 +96,25 @@ body {
     color: #061124;
     font-weight: 600;
     text-decoration: none !important;
-    transition: transform var(--ease), filter var(--ease)
+    transition: transform var(--ease), filter var(--ease);
 }
 
 .btn:hover,
 .btn:focus {
     transform: translateY(-3px);
-    filter: brightness(1.05)
+    filter: brightness(1.05);
 }
 
 .contact-btn img {
     height: 20px;
-    vertical-align: middle
+    vertical-align: middle;
 }
 
+/* Galería */
 .gallery-section {
     max-width: var(--max-width);
     margin: 2rem auto;
-    padding: 1rem
+    padding: 1rem;
 }
 
 .viewer {
@@ -122,31 +123,37 @@ body {
     border-radius: 10px;
     display: flex;
     justify-content: center;
-    align-items: center
+    align-items: center;
 }
 
 .viewer img {
     max-width: 100%;
     height: auto;
     border-radius: 8px;
-    display: block
+    display: block;
 }
 
+/* Miniaturas: mejora para mobile */
 .thumbnails {
     display: flex;
     gap: 0.5rem;
     margin-top: .7rem;
     list-style: none;
-    padding: 0
+    padding: 0;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
 }
 
+/* Ocultar outline visual por defecto pero mantener accesibilidad con focus visible */
 .thumb {
     background: none;
     border: 2px solid transparent;
     padding: 2px;
     border-radius: 6px;
     cursor: pointer;
-    transition: transform var(--ease), border-color var(--ease)
+    transition: transform var(--ease), border-color var(--ease);
+    flex: 0 0 auto; /* evita que las miniaturas se compriman */
 }
 
 .thumb img {
@@ -154,25 +161,66 @@ body {
     height: 100px;
     object-fit: cover;
     border-radius: 6px;
-    display: block
+    display: block;
 }
 
 .thumb:hover,
 .thumb:focus {
     transform: translateY(-4px);
     border-color: var(--accent);
-    outline: none
+    outline: none;
 }
 
+/* Focus visible accesible */
+.thumb:focus-visible {
+    outline: 3px solid rgba(142,167,255,0.28);
+    outline-offset: 3px;
+}
+
+/* Secciones about/contact */
 .about,
 .contact {
     max-width: var(--max-width);
     margin: 1rem auto;
     padding: 1rem;
     background: var(--glass);
-    border-radius: 8px
+    border-radius: 8px;
 }
 
+/* Nuevo: vídeo inline debajo del audio */
+.inline-video {
+    margin-top: 1rem;
+    background: rgba(255,255,255,0.02);
+    padding: .75rem;
+    border-radius: 10px;
+    max-width: 920px;
+}
+
+/* Vídeo responsive: elimina la necesidad del atributo width en HTML */
+.inline-video video,
+.inline-video iframe {
+    width: 100%;
+    max-width: 900px;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+    background: #000;
+}
+
+/* Caption / atribución */
+.inline-video .caption {
+    opacity: .85;
+    font-size: .92rem;
+    margin-top: .5rem;
+}
+
+/* A11y: foco visible en el vídeo */
+.inline-video video:focus {
+    outline: 3px solid rgba(142,167,255,0.6);
+    outline-offset: 4px;
+}
+
+/* Footer */
 .site-footer {
     max-width: var(--max-width);
     margin: 2rem auto;
@@ -180,9 +228,10 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-top: 1px solid rgba(255, 255, 255, 0.03)
+    border-top: 1px solid rgba(255, 255, 255, 0.03);
 }
 
+/* Modal (opcional: borra si ya no lo usas) */
 .modal {
     position: fixed;
     inset: 0;
@@ -190,11 +239,11 @@ body {
     align-items: center;
     justify-content: center;
     background: rgba(0, 0, 0, 0.6);
-    z-index: 50
+    z-index: 50;
 }
 
 .modal[aria-hidden="false"] {
-    display: flex
+    display: flex !important;
 }
 
 .modal-content {
@@ -204,7 +253,7 @@ body {
     max-width: 90%;
     max-height: 90%;
     overflow: auto;
-    position: relative
+    position: relative;
 }
 
 .modal-close {
@@ -215,9 +264,24 @@ body {
     border: 0;
     color: #fff;
     font-size: 1.25rem;
-    cursor: pointer
+    cursor: pointer;
 }
 
+/* Utility: pantalla pequeña */
+@media (max-width: 640px) {
+    .hero-overlay { left: 0.6rem; bottom: 0.6rem; padding: .75rem; }
+    .thumb img { width: 120px; height: 75px; }
+    .inline-video { padding: .5rem; }
+    .hero-img { max-height: 45vh; }
+}
+
+/* Utility: pantallas muy pequeñas, hace scroll horizontal más usable */
+@media (max-width: 420px) {
+    .thumbnails { gap: .4rem; }
+    .thumb img { width: 110px; height: 70px; }
+}
+
+/* Screen-reader helper */
 .sr-only {
     position: absolute;
     width: 1px;
@@ -227,5 +291,5 @@ body {
     overflow: hidden;
     clip: rect(0, 0, 0, 0);
     white-space: nowrap;
-    border: 0
+    border: 0;
 }
