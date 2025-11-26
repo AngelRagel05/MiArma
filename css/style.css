@@ -157,7 +157,6 @@ body {
 .gallery-section {
     max-width: var(--max-width);
     margin: 2rem auto;
-    padding: 1rem;
 }
 
 .viewer {
