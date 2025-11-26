@@ -107,8 +107,50 @@ body {
 }
 
 .contact-btn img {
-    height: 20px;
+    height: 100px;
     vertical-align: middle;
+}
+
+/* Reel button wrapper (al principio) */
+.reel-button-wrap {
+    max-width: var(--max-width);
+    margin: 0.6rem auto;
+    padding: 0 1rem;
+    display: flex;
+    justify-content: flex-start; /* ajusta a centro si lo prefieres */
+    align-items: center;
+}
+
+/* Botón Ver Reel — combina con la estética .btn pero con un look propio */
+.reel-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    padding: .6rem 1rem;
+    border-radius: 10px;
+    border: 0;
+    cursor: pointer;
+    background: linear-gradient(90deg, rgba(142,167,255,0.16), rgba(142,167,255,0.08));
+    color: var(--accent);
+    font-weight: 700;
+    letter-spacing: 0.2px;
+    box-shadow: 0 6px 20px rgba(3,8,22,0.5);
+    transition: transform var(--ease), box-shadow var(--ease), background var(--ease);
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(142,167,255,0.06);
+}
+
+.reel-btn:hover,
+.reel-btn:focus {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(3,8,22,0.6);
+    outline: none;
+}
+
+/* Focus visible accesible para el botón del reel */
+.reel-btn:focus-visible {
+    outline: 3px solid rgba(142,167,255,0.2);
+    outline-offset: 4px;
 }
 
 /* Galería */
@@ -188,7 +230,7 @@ body {
     border-radius: 8px;
 }
 
-/* Nuevo: vídeo inline debajo del audio */
+/* Mantengo .inline-video por si la necesitas en otras páginas */
 .inline-video {
     margin-top: 1rem;
     background: rgba(255, 255, 255, 0.02);
@@ -233,40 +275,112 @@ body {
     border-top: 1px solid rgba(255, 255, 255, 0.03);
 }
 
-/* Modal (opcional: borra si ya no lo usas) */
+/* Modal */
 .modal {
     position: fixed;
     inset: 0;
     display: none;
     align-items: center;
     justify-content: center;
-    background: rgba(0, 0, 0, 0.6);
-    z-index: 50;
+    background: rgba(0, 0, 0, 0.65);
+    z-index: 1000; /* más alto para asegurar que esté encima de todo */
+    padding: 1.25rem;
 }
 
-.modal[aria-hidden="false"] {
+/* Soporta tanto la variante aria-hidden como la clase 'open' */
+.modal[aria-hidden="false"],
+.modal.open {
     display: flex !important;
 }
 
+/* Contenido del modal (centro, tamaño y scroll interno) */
 .modal-content {
-    background: #0b1220;
+    background: linear-gradient(180deg, #071122 0%, #0b1220 100%);
     padding: 1rem;
-    border-radius: 10px;
-    max-width: 90%;
-    max-height: 90%;
+    border-radius: 12px;
+    max-width: 900px;
+    width: 100%;
+    max-height: 90vh;
     overflow: auto;
     position: relative;
+    box-shadow: 0 20px 50px rgba(2,6,16,0.8);
+    border: 1px solid rgba(255,255,255,0.03);
 }
 
 .modal-close {
-    position: absolute;
-    top: 8px;
-    right: 8px;
-    background: transparent;
-    border: 0;
-    color: #fff;
-    font-size: 1.25rem;
-    cursor: pointer;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 44px;               /* área interactiva mínima recomendada */
+  height: 44px;              /* área interactiva mínima recomendada */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.04); /* sutil fondo para que sea visible */
+  backdrop-filter: blur(6px);
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.03);
+  cursor: pointer;
+  padding: 0;                /* mantenemos el tamaño controlado por width/height */
+  z-index: 9999;             /* encima del vídeo y controles nativos */
+  color: #e6eef8;
+  font-size: 18px;           /* tamaño del caracter/cruz */
+  line-height: 1;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.45);
+  transition: transform var(--ease), background var(--ease), box-shadow var(--ease);
+  pointer-events: auto;      /* asegurar que reciba eventos */
+}
+
+/* Si usas un SVG dentro del botón, igual centrado */
+.modal-close svg {
+  width: 18px;
+  height: 18px;
+  display: block;
+  pointer-events: none;      /* prevenir interferencias al clicar */
+}
+
+/* Hover / active */
+.modal-close:hover,
+.modal-close:focus {
+  transform: translateY(-2px);
+  background: rgba(255,255,255,0.06);
+  box-shadow: 0 10px 28px rgba(0,0,0,0.55);
+  outline: none;
+}
+
+/* Focus visible accesible */
+.modal-close:focus-visible {
+  outline: 3px solid rgba(142,167,255,0.22);
+  outline-offset: 4px;
+  border-radius: 10px;
+}
+
+
+/* Contenedor interno para el vídeo */
+.modal-video {
+    margin-top: .5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+/* Vídeo responsivo dentro del modal */
+.modal-video video,
+.modal-video iframe {
+    width: 100%;
+    max-width: 880px;
+    max-height: 75vh;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    background: #000;
+}
+
+/* A11y: foco visible en el vídeo dentro del modal */
+.modal-video video:focus {
+    outline: 3px solid rgba(142, 167, 255, 0.5);
+    outline-offset: 4px;
 }
 
 /* Utility: pantalla pequeña */
@@ -289,6 +403,22 @@ body {
     .hero-img {
         max-height: 45vh;
     }
+
+    /* Ajuste modal en móvil: ocupa más espacio y menos padding */
+    .modal {
+        padding: .5rem;
+    }
+
+    .modal-content {
+        border-radius: 8px;
+        padding: .75rem;
+        max-width: 100%;
+        max-height: 92vh;
+    }
+
+    .reel-button-wrap {
+        justify-content: center;
+    }
 }
 
 /* Utility: pantallas muy pequeñas, hace scroll horizontal más usable */
@@ -300,6 +430,11 @@ body {
     .thumb img {
         width: 110px;
         height: 70px;
+    }
+
+    .reel-btn {
+        padding: .55rem .9rem;
+        font-size: .95rem;
     }
 }
 
@@ -327,16 +462,9 @@ body {
 .contact-btn{
   appearance: none;
   border: none;
-  background: none; 
+  background: none;
   cursor: pointer;
   padding: 0;
-}
-
-.contact-gif{
-  width: 200px;
-  height: 1000px;
-  max-width: 100%;
-  display: block;
 }
 
 /* Interacciones */
@@ -363,8 +491,6 @@ body {
         font-size: 1.05rem;
     }
 }
-
-
 
 #footer a {
     text-decoration: none;

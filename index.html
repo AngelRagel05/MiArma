@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>MiArma - Paisajes de Ciencia Ficción</title>
-    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/style.css" />
     <meta
       name="description"
       content="Portfolio interactivo de MiArma — paisajes digitales de ciencia ficción."
@@ -29,7 +29,19 @@
       </nav>
     </header>
 
-    <main>
+<!-- botón Ver Reel (colócalo justo después del header o donde quieras) -->
+<div class="reel-button-wrap">
+  <button
+    id="openReelBtn"
+    class="reel-btn"
+    type="button"
+    aria-haspopup="dialog"
+    aria-controls="reelModal"
+  >
+    Ver Reel
+  </button>
+</div>
+
       <!-- Hero -->
       <section class="hero" aria-label="imgn principal">
         <img
@@ -131,7 +143,7 @@
         </ul>
       </section>
 
-      <!-- About / Audio + Video -->
+      <!-- About / Audio (vídeo INLINE eliminado; ahora se abre desde el modal) -->
       <section id="about" class="about">
         <h3>Sobre MiArma</h3>
         <p>Artista digital especializada en paisajes de ciencia ficción.</p>
@@ -145,19 +157,7 @@
           Tu navegador no soporta audio.
         </audio>
 
-        <!-- Vídeo visible siempre debajo del audio -->
-        <div class="inline-video">
-          <h4>Reel / Animación</h4>
-          <video
-            id="reelVideo"
-            controls
-            preload="metadata"
-            aria-label="Vídeo de presentación de MiArma"
-          >
-            <source src="assets/video/video.mp4" type="video/mp4" />
-            Tu navegador no soporta video.
-          </video>
-        </div>
+        <!-- Nota: el vídeo ya no está en línea aquí; se abre desde "Ver Reel" -->
       </section>
 
       <section id="contact" class="contact-section" aria-label="Contacto">
@@ -168,7 +168,7 @@
           aria-label="Contactar con MiArma"
         >
           <img
-            src="assets/img/botonContact.gif"
+            src="assets/img/soporte-telefonico.gif"
             alt="Botón de contacto animado"
             class="contact-gif"
           />
@@ -181,5 +181,20 @@
         </nav>
       </footer>
     </main>
+
+<!-- modal del Reel (colócalo al final del <body>) -->
+<div id="reelModal" class="modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="reelTitle">
+  <div class="modal-content" role="document">
+    <button id="closeReelBtn" class="modal-close" aria-label="Cerrar">✕</button>
+    <h2 id="reelTitle" class="sr-only">Reel de MiArma</h2>
+    <div class="modal-video">
+      <video id="reelVideo" controls preload="metadata" aria-label="Vídeo de presentación de MiArma">
+        <source src="assets/video/video.mp4" type="video/mp4" />
+        Tu navegador no soporta video.
+      </video>
+    </div>
+  </div>
+</div>
+
   </body>
 </html>
