@@ -32,3 +32,49 @@ a {
 a:hover {
   text-decoration: underline;
 }
+
+
+/* Footer */
+/* Footer container (tal como lo tenías) */
+.site-footer {
+  max-width: var(--max-width);
+  margin: 2rem auto;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+/* Enlace con efecto */
+.site-footer a {
+  position: relative;
+  color: inherit;
+  text-decoration: none;
+  opacity: .85;
+  transition: opacity var(--ease);
+}
+
+/* Línea animada */
+.site-footer a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px; /* separación */
+  width: 0%;
+  height: 2px;
+  background: currentColor;
+  transition: width 0.25s ease;
+  border-radius: 2px;
+}
+
+/* Hover/focus */
+.site-footer a:hover,
+.site-footer a:focus {
+  opacity: 1;
+}
+
+.site-footer a:hover::after,
+.site-footer a:focus::after {
+  width: 100%;
+}
