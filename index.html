@@ -1,102 +1,185 @@
 <!DOCTYPE html>
 <html lang="es">
-
-<head>
+  <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>MiArma - Paisajes de Ciencia Ficción</title>
     <link rel="stylesheet" href="css/index.css" />
-    <meta name="description" content="Portfolio interactivo de MiArma — paisajes digitales de ciencia ficción." />
-    <link rel="shortcut icon" href="assets/img/logo.svg" type="image/x-icon">
+    <meta
+      name="description"
+      content="Portfolio interactivo de MiArma — paisajes digitales de ciencia ficción."
+    />
+    <link rel="shortcut icon" href="assets/img/logo.svg" type="image/x-icon" />
     <script src="js/main.js" defer></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <header class="site-header">
-        <div class="brand">
-            <a href="index.html">
-                <img src="assets/img/logo.svg" alt="Logo MiArma" class="logo" />
-            </a>
-            <h1 class="sr-only">MiArma — Artista digital</h1>
-        </div>
-        <nav class="main-nav" aria-label="Navegación principal">
-            <a href="#work">Obra</a>
-            <a href="#about">Sobre MiArma</a>
-            <a href="#contact">Contacto</a>
-            <a href="#footer">Créditos</a>
-        </nav>
+      <div class="brand">
+        <a href="index.html">
+          <img src="assets/img/logo.svg" alt="Logo MiArma" class="logo" />
+        </a>
+        <h1 class="sr-only">MiArma — Artista digital</h1>
+      </div>
+      <nav class="main-nav" aria-label="Navegación principal">
+        <a href="#work">Obra</a>
+        <a href="#about">Sobre MiArma</a>
+        <a href="#contact">Contacto</a>
+        <a href="#footer">Créditos</a>
+      </nav>
     </header>
 
     <main>
-        <!-- Hero -->
-        <section class="hero" aria-label="imgn principal">
-            <img src="assets/img/hero.jpg" alt="Paisaje futurista por MiArma" class="hero-img" />
-            <div class="hero-overlay">
-                <h2>MiArma</h2>
-                <p>Paisajes de ciencia ficción</p>
-            </div>
-        </section>
+      <!-- Hero -->
+      <section class="hero" aria-label="imgn principal">
+        <img
+          src="assets/img/hero.jpg"
+          alt="Paisaje futurista por MiArma"
+          class="hero-img"
+        />
+        <div class="hero-overlay">
+          <h2>MiArma</h2>
+          <p>Paisajes de ciencia ficción</p>
+        </div>
+      </section>
 
-        <!-- Work / Gallery -->
-        <section id="work" class="gallery-section">
-            <h3>Galería</h3>
-            <div class="viewer" aria-live="polite">
-                <img id="mainimg" src="assets/img/obraPrincipal.jpg" alt="Obra principal" />
-            </div>
-            <ul class="thumbnails" role="list">
-                <li><button class="thumb" aria-label="Ver obra 1">
-                        <img src="assets/img/img1.jpg" alt="Miniatura obra 1" class="imgThumb" />
-                    </button></li>
-                <li><button class="thumb" data-full="assets/img/img2.jpg" aria-label="Ver obra 2">
-                        <img src="assets/img/img2.jpg" alt="Miniatura obra 2" class="imgThumb" />
-                    </button></li>
-                <li><button class="thumb" data-full="assets/img/img3.jpg" aria-label="Ver obra 3">
-                        <img src="assets/img/img3.jpg" alt="Miniatura obra 3" class="imgThumb" />
-                    </button></li>
-                <li><button class="thumb" data-full="assets/img/img4.jpg" aria-label="Ver obra 2">
-                        <img src="assets/img/img4.jpg" alt="Miniatura obra 4" class="imgThumb" />
-                    </button></li>
-                <li><button class="thumb" data-full="assets/img/img5.jpg" aria-label="Ver obra 2">
-                        <img src="assets/img/img5.jpg" alt="Miniatura obra 5" class="imgThumb" />
-                    </button></li>
-                <li><button class="thumb" data-full="assets/img/img6.jpg" aria-label="Ver obra 2">
-                        <img src="assets/img/img6.jpg" alt="Miniatura obra 6" class="imgThumb" />
-                    </button></li>
-            </ul>
-        </section>
-
-        <!-- About / Audio + Video -->
-        <section id="about" class="about">
-            <h3>Sobre MiArma</h3>
-            <p>Artista digital especializada en paisajes de ciencia ficción.</p>
-
-            <!-- Audio de presentación -->
-            <audio controls src="assets/audio/audio.mp3" aria-label="Audio de presentación">
-                Tu navegador no soporta audio.
-            </audio>
-
-            <!-- Vídeo visible siempre debajo del audio -->
-            <div class="inline-video">
-                <h4>Reel / Animación</h4>
-                <video id="reelVideo" controls preload="metadata" aria-label="Vídeo de presentación de MiArma">
-                    <source src="assets/video/video.mp4" type="video/mp4">
-                    Tu navegador no soporta video.
-                </video>
-            </div>
-        </section>
-
-        <section id="contact" class="contact-section" aria-label="Contacto">
-            <button id="contactBtn" class="contact-btn" type="button" aria-label="Contactar con MiArma">
-                <img src="assets/img/botonContact.gif" alt="Botón de contacto animado" class="contact-gif" />
+      <!-- Work / Gallery -->
+      <section id="work" class="gallery-section">
+        <h3>Galería</h3>
+        <div class="viewer" aria-live="polite">
+          <img
+            id="mainimg"
+            src="assets/img/obraPrincipal.jpg"
+            alt="Obra principal"
+          />
+        </div>
+        <ul class="thumbnails" role="list">
+          <li>
+            <button class="thumb" aria-label="Ver obra 1">
+              <img
+                src="assets/img/img1.jpg"
+                alt="Miniatura obra 1"
+                class="imgThumb"
+              />
             </button>
-        </section>
+          </li>
+          <li>
+            <button
+              class="thumb"
+              data-full="assets/img/img2.jpg"
+              aria-label="Ver obra 2"
+            >
+              <img
+                src="assets/img/img2.jpg"
+                alt="Miniatura obra 2"
+                class="imgThumb"
+              />
+            </button>
+          </li>
+          <li>
+            <button
+              class="thumb"
+              data-full="assets/img/img3.jpg"
+              aria-label="Ver obra 3"
+            >
+              <img
+                src="assets/img/img3.jpg"
+                alt="Miniatura obra 3"
+                class="imgThumb"
+              />
+            </button>
+          </li>
+          <li>
+            <button
+              class="thumb"
+              data-full="assets/img/img4.jpg"
+              aria-label="Ver obra 2"
+            >
+              <img
+                src="assets/img/img4.jpg"
+                alt="Miniatura obra 4"
+                class="imgThumb"
+              />
+            </button>
+          </li>
+          <li>
+            <button
+              class="thumb"
+              data-full="assets/img/img5.jpg"
+              aria-label="Ver obra 2"
+            >
+              <img
+                src="assets/img/img5.jpg"
+                alt="Miniatura obra 5"
+                class="imgThumb"
+              />
+            </button>
+          </li>
+          <li>
+            <button
+              class="thumb"
+              data-full="assets/img/img6.jpg"
+              aria-label="Ver obra 2"
+            >
+              <img
+                src="assets/img/img6.jpg"
+                alt="Miniatura obra 6"
+                class="imgThumb"
+              />
+            </button>
+          </li>
+        </ul>
+      </section>
 
+      <!-- About / Audio + Video -->
+      <section id="about" class="about">
+        <h3>Sobre MiArma</h3>
+        <p>Artista digital especializada en paisajes de ciencia ficción.</p>
 
-        <footer class="site-footer" id="footer">
-            <nav>
-                <a href="html/credits.html">Créditos y Licencias</a>
-            </nav>
-        </footer>
-</body>
+        <!-- Audio de presentación -->
+        <audio
+          controls
+          src="assets/audio/audio.mp3"
+          aria-label="Audio de presentación"
+        >
+          Tu navegador no soporta audio.
+        </audio>
 
+        <!-- Vídeo visible siempre debajo del audio -->
+        <div class="inline-video">
+          <h4>Reel / Animación</h4>
+          <video
+            id="reelVideo"
+            controls
+            preload="metadata"
+            aria-label="Vídeo de presentación de MiArma"
+          >
+            <source src="assets/video/video.mp4" type="video/mp4" />
+            Tu navegador no soporta video.
+          </video>
+        </div>
+      </section>
+
+      <section id="contact" class="contact-section" aria-label="Contacto">
+        <button
+          id="contactBtn"
+          class="contact-btn"
+          type="button"
+          aria-label="Contactar con MiArma"
+        >
+          <img
+            src="assets/img/botonContact.gif"
+            alt="Botón de contacto animado"
+            class="contact-gif"
+          />
+        </button>
+      </section>
+
+      <footer class="site-footer" id="footer">
+        <nav>
+          <a href="html/credits.html">Créditos y Licencias</a>
+        </nav>
+      </footer>
+    </main>
+  </body>
 </html>
