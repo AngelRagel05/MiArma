@@ -28,7 +28,7 @@
         <a href="#footer">Créditos</a>
       </nav>
     </header>
-
+    <main>
       <!-- Hero -->
       <section class="hero" aria-label="imgn principal">
         <img
@@ -39,20 +39,19 @@
         <div class="hero-overlay">
           <h2>MiArma</h2>
           <p>Paisajes de ciencia ficción</p>
-          
         </div>
       </section>
-<div class="reel-button-wrap">
-  <button
-    id="openReelBtn"
-    class="reel-btn"
-    type="button"
-    aria-haspopup="dialog"
-    aria-controls="reelModal"
-  >
-    Ver Reel
-  </button>
-</div>
+      <div class="reel-button-wrap">
+        <button
+          id="openReelBtn"
+          class="reel-btn"
+          type="button"
+          aria-haspopup="dialog"
+          aria-controls="reelModal"
+        >
+          Ver Reel
+        </button>
+      </div>
       <!-- Work / Gallery -->
       <section id="work" class="gallery-section">
         <h3>Galería</h3>
@@ -158,49 +157,61 @@
         <!-- Nota: el vídeo ya no está en línea aquí; se abre desde "Ver Reel" -->
       </section>
 
-<section id="contact" class="contact-section" aria-label="Contacto">
+      <section id="contact" class="contact-section" aria-label="Contacto">
+        <div class="contact-body">
+          <h3 id="contactTitle">Contacto</h3>
+          <p class="contact-desc">
+            ¿Interesado en comisiones, colaboraciones o adquisiciones? Escríbeme
+            y te responderé en un plazo de 24–48 horas.
+          </p>
+        </div>
 
-  <div class="contact-body">
-    <h3 id="contactTitle">Contacto</h3>
-    <p class="contact-desc">
-      ¿Interesado en comisiones, colaboraciones o adquisiciones? Escríbeme y te responderé en un plazo de 24–48 horas.
-    </p>
-  </div>
-
-  <button
-    id="contactBtn"
-    class="contact-btn"
-    type="button"
-    aria-label="Contactar con MiArma"
-  >
-    <img
-      src="assets/img/soporte-telefonico.gif"
-      alt="Botón de contacto animado"
-      class="contact-gif"
-    />
-  </button>
-
-</section>
-
-      <footer class="site-footer" id="footer">
-        <nav>
-          <a href="html/credits.html">Créditos y Licencias</a>
-        </nav>
-      </footer>
+        <button
+          id="contactBtn"
+          class="contact-btn"
+          type="button"
+          aria-label="Contactar con MiArma"
+        >
+          <img
+            src="assets/img/soporte-telefonico.gif"
+            alt="Botón de contacto animado"
+            class="contact-gif"
+          />
+        </button>
+      </section>
     </main>
 
-<div id="reelModal" class="modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="reelTitle">
-  <div class="modal-content" role="document">
-    <button id="closeReelBtn" class="modal-close" aria-label="Cerrar">✕</button>
-    <h2 id="reelTitle" class="sr-only">Reel de MiArma</h2>
-    <div class="modal-video">
-      <video id="reelVideo" controls preload="metadata" aria-label="Vídeo de presentación de MiArma">
-        <source src="assets/video/video.mp4" type="video/mp4" />
-        Tu navegador no soporta video.
-      </video>
+    <div
+      id="reelModal"
+      class="modal"
+      role="dialog"
+      aria-modal="true"
+      aria-hidden="true"
+      aria-labelledby="reelTitle"
+    >
+      <div class="modal-content" role="document">
+        <button id="closeReelBtn" class="modal-close" aria-label="Cerrar">
+          ✕
+        </button>
+        <h2 id="reelTitle" class="sr-only">Reel de MiArma</h2>
+        <div class="modal-video">
+          <video
+            id="reelVideo"
+            controls
+            preload="metadata"
+            aria-label="Vídeo de presentación de MiArma"
+          >
+            <source src="assets/video/video.mp4" type="video/mp4" />
+            Tu navegador no soporta video.
+          </video>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
 
+    <footer class="site-footer" id="footer">
+      <nav>
+        <a href="html/credits.html">Créditos y Licencias</a>
+      </nav>
+    </footer>
   </body>
 </html>
