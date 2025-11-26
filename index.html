@@ -52,6 +52,35 @@
           Ver Reel
         </button>
       </div>
+
+      <!-- Modal del Video -->
+      <div
+        id="reelModal"
+        class="modal"
+        role="dialog"
+        aria-modal="true"
+        aria-hidden="true"
+        aria-labelledby="reelTitle"
+      >
+        <div class="modal-content" role="document">
+          <button id="closeReelBtn" class="modal-close" aria-label="Cerrar">
+            ✕
+          </button>
+          <h2 id="reelTitle" class="sr-only">Reel de MiArma</h2>
+          <div class="modal-video">
+            <video
+              id="reelVideo"
+              controls
+              preload="metadata"
+              aria-label="Vídeo de presentación de MiArma"
+            >
+              <source src="assets/video/video.mp4" type="video/mp4" />
+              Tu navegador no soporta video.
+            </video>
+          </div>
+        </div>
+      </div>
+
       <!-- Work / Gallery -->
       <section id="work" class="gallery-section">
         <h3>Galería</h3>
@@ -157,6 +186,7 @@
         <!-- Nota: el vídeo ya no está en línea aquí; se abre desde "Ver Reel" -->
       </section>
 
+      <!-- Sección Contacto -->
       <section id="contact" class="contact-section" aria-label="Contacto">
         <div class="contact-body">
           <h3 id="contactTitle">Contacto</h3>
@@ -180,33 +210,6 @@
         </button>
       </section>
     </main>
-
-    <div
-      id="reelModal"
-      class="modal"
-      role="dialog"
-      aria-modal="true"
-      aria-hidden="true"
-      aria-labelledby="reelTitle"
-    >
-      <div class="modal-content" role="document">
-        <button id="closeReelBtn" class="modal-close" aria-label="Cerrar">
-          ✕
-        </button>
-        <h2 id="reelTitle" class="sr-only">Reel de MiArma</h2>
-        <div class="modal-video">
-          <video
-            id="reelVideo"
-            controls
-            preload="metadata"
-            aria-label="Vídeo de presentación de MiArma"
-          >
-            <source src="assets/video/video.mp4" type="video/mp4" />
-            Tu navegador no soporta video.
-          </video>
-        </div>
-      </div>
-    </div>
 
     <footer class="site-footer" id="footer">
       <nav>
