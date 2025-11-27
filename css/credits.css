@@ -34,8 +34,6 @@ a:hover {
 }
 
 
-/* Footer */
-/* Footer container (tal como lo tenías) */
 .site-footer {
   max-width: var(--max-width);
   margin: 2rem auto;
@@ -46,7 +44,6 @@ a:hover {
   border-top: 1px solid rgba(255, 255, 255, 0.03);
 }
 
-/* Enlace con efecto */
 .site-footer a {
   position: relative;
   color: inherit;
@@ -55,12 +52,11 @@ a:hover {
   transition: opacity var(--ease);
 }
 
-/* Línea animada */
 .site-footer a::after {
   content: "";
   position: absolute;
   left: 0;
-  bottom: -3px; /* separación */
+  bottom: -3px;
   width: 0%;
   height: 2px;
   background: currentColor;
@@ -68,7 +64,6 @@ a:hover {
   border-radius: 2px;
 }
 
-/* Hover/focus */
 .site-footer a:hover,
 .site-footer a:focus {
   opacity: 1;

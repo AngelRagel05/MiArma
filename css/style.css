@@ -55,12 +55,11 @@ body {
   transition: opacity var(--ease);
 }
 
-/* Línea animada */
 .main-nav a::after {
   content: "";
   position: absolute;
   left: 0;
-  bottom: -3px;  /* distancia bajo el texto */
+  bottom: -3px;
   width: 0%;
   height: 2px;
   background: currentColor;
@@ -73,7 +72,6 @@ body {
   opacity: 1;
 }
 
-/* Cuando se activa el hover/focus → aparece la línea */
 .main-nav a:hover::after,
 .main-nav a:focus::after {
   width: 100%;
@@ -130,17 +128,15 @@ body {
     vertical-align: middle;
 }
 
-/* Reel button wrapper (al principio) */
 .reel-button-wrap {
     max-width: var(--max-width);
     margin: 0.6rem auto;
     padding: 0 1rem;
     display: flex;
-    justify-content: flex-start; /* ajusta a centro si lo prefieres */
+    justify-content: flex-start;
     align-items: center;
 }
 
-/* Botón Ver Reel — combina con la estética .btn pero con un look propio */
 .reel-btn {
     display: inline-flex;
     align-items: center;
@@ -166,13 +162,11 @@ body {
     outline: none;
 }
 
-/* Focus visible accesible para el botón del reel */
 .reel-btn:focus-visible {
     outline: 3px solid rgba(142,167,255,0.2);
     outline-offset: 4px;
 }
 
-/* Galería */
 .gallery-section {
     max-width: var(--max-width);
     margin: 2rem auto;
@@ -194,7 +188,6 @@ body {
     display: block;
 }
 
-/* Miniaturas: mejora para mobile */
 .thumbnails {
     display: flex;
     gap: 0.5rem;
@@ -206,7 +199,6 @@ body {
     scrollbar-width: thin;
 }
 
-/* Ocultar outline visual por defecto pero mantener accesibilidad con focus visible */
 .thumb {
     background: none;
     border: 2px solid transparent;
@@ -215,7 +207,6 @@ body {
     cursor: pointer;
     transition: transform var(--ease), border-color var(--ease);
     flex: 0 0 auto;
-    /* evita que las miniaturas se compriman */
 }
 
 .thumb img {
@@ -232,13 +223,11 @@ body {
     outline: none;
 }
 
-/* Focus visible accesible */
 .thumb:focus-visible {
     outline: 3px solid rgba(142, 167, 255, 0.28);
     outline-offset: 3px;
 }
 
-/* Secciones about/contact */
 .about,
 .contact {
     max-width: var(--max-width);
@@ -248,7 +237,6 @@ body {
     border-radius: 8px;
 }
 
-/* Mantengo .inline-video por si la necesitas en otras páginas */
 .inline-video {
     margin-top: 1rem;
     background: rgba(255, 255, 255, 0.02);
@@ -257,7 +245,6 @@ body {
     max-width: 920px;
 }
 
-/* Vídeo responsive: elimina la necesidad del atributo width en HTML */
 .inline-video video,
 .inline-video iframe {
     width: 100%;
@@ -268,21 +255,17 @@ body {
     background: #000;
 }
 
-/* Caption / atribución */
 .inline-video .caption {
     opacity: .85;
     font-size: .92rem;
     margin-top: .5rem;
 }
 
-/* A11y: foco visible en el vídeo */
 .inline-video video:focus {
     outline: 3px solid rgba(142, 167, 255, 0.6);
     outline-offset: 4px;
 }
 
-/* Footer */
-/* Footer container (tal como lo tenías) */
 .site-footer {
   max-width: var(--max-width);
   margin: 2rem auto;
@@ -293,7 +276,6 @@ body {
   border-top: 1px solid rgba(255, 255, 255, 0.03);
 }
 
-/* Enlace con efecto */
 .site-footer a {
   position: relative;
   color: inherit;
@@ -302,12 +284,11 @@ body {
   transition: opacity var(--ease);
 }
 
-/* Línea animada */
 .site-footer a::after {
   content: "";
   position: absolute;
   left: 0;
-  bottom: -3px; /* separación */
+  bottom: -3px;
   width: 0%;
   height: 2px;
   background: currentColor;
@@ -315,7 +296,6 @@ body {
   border-radius: 2px;
 }
 
-/* Hover/focus */
 .site-footer a:hover,
 .site-footer a:focus {
   opacity: 1;
@@ -326,7 +306,6 @@ body {
   width: 100%;
 }
 
-/* Modal */
 .modal {
     position: fixed;
     inset: 0;
@@ -334,17 +313,15 @@ body {
     align-items: center;
     justify-content: center;
     background: rgba(0, 0, 0, 0.65);
-    z-index: 1000; /* más alto para asegurar que esté encima de todo */
+    z-index: 1000;
     padding: 1.25rem;
 }
 
-/* Soporta tanto la variante aria-hidden como la clase 'open' */
 .modal[aria-hidden="false"],
 .modal.open {
     display: flex !important;
 }
 
-/* Contenido del modal (centro, tamaño y scroll interno) */
 .modal-content {
     background: linear-gradient(180deg, #071122 0%, #0b1220 100%);
     padding: 1rem;
@@ -362,35 +339,33 @@ body {
   position: absolute;
   top: 12px;
   right: 12px;
-  width: 44px;               /* área interactiva mínima recomendada */
-  height: 44px;              /* área interactiva mínima recomendada */
+  width: 44px;
+  height: 44px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: rgba(255,255,255,0.04); /* sutil fondo para que sea visible */
+  background: rgba(255,255,255,0.04);
   backdrop-filter: blur(6px);
   border-radius: 10px;
   border: 1px solid rgba(255,255,255,0.03);
   cursor: pointer;
-  padding: 0;                /* mantenemos el tamaño controlado por width/height */
-  z-index: 9999;             /* encima del vídeo y controles nativos */
+  padding: 0;
+  z-index: 9999;
   color: #e6eef8;
-  font-size: 18px;           /* tamaño del caracter/cruz */
+  font-size: 18px;
   line-height: 1;
   box-shadow: 0 6px 18px rgba(0,0,0,0.45);
   transition: transform var(--ease), background var(--ease), box-shadow var(--ease);
-  pointer-events: auto;      /* asegurar que reciba eventos */
+  pointer-events: auto;
 }
 
-/* Si usas un SVG dentro del botón, igual centrado */
 .modal-close svg {
   width: 18px;
   height: 18px;
   display: block;
-  pointer-events: none;      /* prevenir interferencias al clicar */
+  pointer-events: none;
 }
 
-/* Hover / active */
 .modal-close:hover,
 .modal-close:focus {
   transform: translateY(-2px);
@@ -399,15 +374,12 @@ body {
   outline: none;
 }
 
-/* Focus visible accesible */
 .modal-close:focus-visible {
   outline: 3px solid rgba(142,167,255,0.22);
   outline-offset: 4px;
   border-radius: 10px;
 }
 
-
-/* Contenedor interno para el vídeo */
 .modal-video {
     margin-top: .5rem;
     display: flex;
@@ -416,7 +388,6 @@ body {
     width: 100%;
 }
 
-/* Vídeo responsivo dentro del modal */
 .modal-video video,
 .modal-video iframe {
     width: 100%;
@@ -428,13 +399,11 @@ body {
     background: #000;
 }
 
-/* A11y: foco visible en el vídeo dentro del modal */
 .modal-video video:focus {
     outline: 3px solid rgba(142, 167, 255, 0.5);
     outline-offset: 4px;
 }
 
-/* Utility: pantalla pequeña */
 @media (max-width: 640px) {
     .hero-overlay {
         left: 0.6rem;
@@ -455,7 +424,6 @@ body {
         max-height: 45vh;
     }
 
-    /* Ajuste modal en móvil: ocupa más espacio y menos padding */
     .modal {
         padding: .5rem;
     }
@@ -472,7 +440,6 @@ body {
     }
 }
 
-/* Utility: pantallas muy pequeñas, hace scroll horizontal más usable */
 @media (max-width: 420px) {
     .thumbnails {
         gap: .4rem;
@@ -489,7 +456,6 @@ body {
     }
 }
 
-/* Screen-reader helper */
 .sr-only {
     position: absolute;
     width: 1px;
@@ -508,7 +474,6 @@ body {
   padding: 0 1rem;
   text-align: center;
 }
-
 
 .contact-body h3 {
   margin-bottom: 0.3rem;
@@ -543,7 +508,6 @@ body {
   outline-offset: 4px;
 }
 
-/* Interacciones */
 .contact-btn:hover {
     transform: translateY(-3px);
 }
@@ -558,7 +522,6 @@ body {
     border-radius: 12px;
 }
 
-/* Adaptación a pantallas pequeñas */
 @media (max-width:420px) {
     .contact-btn {
         width: 100%;
